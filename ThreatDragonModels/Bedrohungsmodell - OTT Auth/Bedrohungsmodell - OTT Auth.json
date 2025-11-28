@@ -47,7 +47,7 @@
           {
             "position": {
               "x": 280,
-              "y": -6.999999999999922
+              "y": 3
             },
             "size": {
               "width": 130,
@@ -58,8 +58,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -91,7 +91,7 @@
                 {
                   "id": "afb01f80-97f6-4e11-bb52-41434dc0ffb9",
                   "title": "Spoofing einer OTT-Anfrage im Login-System",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Ein Angreifer täuscht sich als legitimer Benutzer aus und sendet gefälschte Auth-Challenge-Anfragen an den 2FA-Dienst, um OTTs für fremde Accounts zu erzeugen.\n\nAngriffsvektor:  Gefälschte HTTP-Requests an die Login-API\nCAPEC-151: Identity Spoofing'\n\nATT&CK: T1589 – Gather Victim Identity Information\n\nD: 8 / R: 7 / E: 6 / A: 7 / DREA: 28",
@@ -102,7 +102,7 @@
                   "score": "15"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null
@@ -122,8 +122,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -142,18 +142,18 @@
                 {
                   "id": "66674188-60b9-40c1-853c-efa9c735d68a",
                   "title": "DoS gegen den 2FA-Dienst",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Ein Angreifer könnte den 2FA-Dienst mit Anfragen überlasten, sodass keine OTTs mehr erzeugt werden.\n\nAngriffsvektor: Er löst eine große Zahl künstlicher Anfragen aus, bis der Dienst nicht mehr reagiert.\n\nCAPEC: CAPEC-125 – Flooding Attack\nMITRE ATT&CK: T1499 – Endpoint Denial of Service\n\nD: 10 / R: 7 / E: 6 / A: 9/ DREA: 32",
-                  "mitigation": "Lastverteilung verhindert Totalausfall, Traffic-Filter blockieren Flooding.\n\nUmsetzung: Load Balancer, Rate Limiting\n\nD3FEND – Network DoS Mitigation (Inbound Traffic Filtering)\n\nD: 5 / R: 3 / E: 3 / A: 5 / DREA: 28",
+                  "mitigation": "Lastverteilung verhindert Totalausfall, Traffic-Filter blockieren Flooding.\n\nUmsetzung: Load Balancer, Rate Limiting\n\nD3FEND – Network DoS Mitigation (Inbound Traffic Filtering)\n\nD: 5 / R: 3 / E: 3 / A: 5 / DREA: 16",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 110,
                   "score": "16"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -288,62 +288,6 @@
               {
                 "x": 237,
                 "y": 39
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Erwarteter OTT",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "2503a360-01b6-4464-b35f-42c6fb583348",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "1. Auth Challenge"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
-            },
-            "target": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "vertices": [
-              {
-                "x": 440,
-                "y": -10
               }
             ]
           },
@@ -952,7 +896,7 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "",
               "threats": []
@@ -1129,8 +1073,63 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Erwarteter OTT",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "2503a360-01b6-4464-b35f-42c6fb583348",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "1. Auth Challenge"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa"
+            },
+            "target": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "vertices": [
+              {
+                "x": 440,
+                "y": -10
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1150,7 +1149,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
@@ -1159,7 +1158,7 @@
                 {
                   "id": "2fb5cece-4344-4b47-92e1-ae6136251b78",
                   "title": "OTT-Abhören im externen Mobilfunknetz",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Information disclosure",
                   "description": "Ein Angreifer könnte versuchen, OTT-Nachrichten im externen Netz mitzulesen.\n\nAngriffsvektor: Er setzt z. B. einen IMSI-Catcher ein oder führt einen MITM-Angriff im Mobil- oder WLAN-Netz durch.\n\nCAPEC: CAPEC-94 – Adversary-in-the-Middle\nATT&CK: T1040 – Network Sniffing\n\nD: 9/ R: 5 / E: 4 / A: 9 / DREA: 27",
@@ -1186,7 +1185,22 @@
                 "x": 320,
                 "y": 650
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -1202,13 +1216,11 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1226,12 +1238,12 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "13f9b91e-1028-4c72-833c-6b8a88ca9549",
                   "title": "Manipulation von Logeinträgen",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Tampering",
                   "description": "Ein Angreifer oder Insider kann Logeinträge verändern oder löschen, um unautorisiertes Verhalten zu verschleiern.\nAngriffsvektor: Er greift direkt auf die Log-Datenbank zu oder nutzt Schwachstellen, um Einträge unbemerkt zu überschreiben.\nCAPEC: CAPEC-268 – Audit Log Manipulation\nATT&CK: T1070 – Indicator Removal on Host\n\nD: 8 / R: 7 / E: 5 / A: 8/  DREA: 28",
@@ -1244,7 +1256,7 @@
                 {
                   "id": "94aaa148-ae66-41b4-8e82-b10881b19469",
                   "title": "Abstreitbarkeit von Änderungen an Telefonnummern-DB",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Repudiation",
                   "description": "Ein interner Mitarbeiter admin editiert Telefonnummern in der DB (z. B. Zielnummer eines Users) und kann diese Handlung später abstreiten.\n\nAngriffsvektor: Die Änderung erfolgt über gemeinsame Admin-Konten oder ohne ausreichende Protokollierung der Benutzeridentität.\n\nCAPEC: CAPEC-122 – Privilege Abuse\nATT&CK: T1565.001 – Stored Data Manipulation\n\nD: 6 / R: 5 / E: 3 / A: 7/  DREA: 21",
@@ -1352,8 +1364,8 @@
                 "text": "Allsecure\nMobile Phone \nOTT Service"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1367,7 +1379,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -1376,7 +1388,7 @@
                 {
                   "id": "c0c3e735-aa31-4eb8-b884-ccc0af418ac6",
                   "title": "Missbrauch von Debug- oder Admin-Schnittstellen im OTT-Service",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Elevation of privilege",
                   "description": "Ein Angreifer könnte eine ungeschützte Debug- oder Admin-Schnittstelle des OTT-Services ausnutzen und dadurch höhere Rechte erhalten, als ihm eigentlich zustehen.\n\nAngriffsvektor: Der Täter ruft versehentlich aktiv gebliebene Debug- oder Admin-Endpoints ohne ausreichende Authentifizierung auf und erhält dadurch unbefugte Administratorfunktionen.\n\nCAPEC: CAPEC-233 – Privilege Escalation\nATT&CK: T1068 – Exploitation for Privilege Escalation\n\nD: 9 / R: 6 / E: 5 / A: 7 / DREA: 27",
