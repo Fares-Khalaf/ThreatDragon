@@ -759,15 +759,15 @@
               "threats": []
             },
             "id": "51a70921-7250-4f96-9123-20fa4f634860",
+            "labels": [
+              "Log-Event"
+            ],
             "source": {
               "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
             },
             "target": {
               "cell": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b"
             },
-            "labels": [
-              "Log-Event"
-            ],
             "vertices": [
               {
                 "x": 450,
@@ -873,15 +873,15 @@
               "threats": []
             },
             "id": "d95d9d6f-4474-4596-af2d-3f5fc8a656f9",
+            "labels": [
+              "Korrelierte Logs"
+            ],
             "source": {
               "cell": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b"
             },
             "target": {
               "cell": "c8925ab4-4b5e-4012-98fc-5ff23bdab848"
-            },
-            "labels": [
-              "Korrelierte Logs"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -915,16 +915,16 @@
               "threats": []
             },
             "id": "e9bde11c-2c4f-4f69-8da1-c298370a5aef",
+            "labels": [
+              "Service-Logs"
+            ],
             "source": {
               "cell": "50d11afb-a629-404e-a96a-1886bda11d65"
             },
             "target": {
               "cell": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b"
             },
-            "vertices": [],
-            "labels": [
-              "Service-Logs"
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -958,15 +958,15 @@
               "threats": []
             },
             "id": "d70f650d-e18e-4da9-92aa-d0fba6a6d6e9",
+            "labels": [
+              " Report "
+            ],
             "source": {
               "cell": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b"
             },
             "target": {
               "cell": "343f9a5d-96ca-4248-95b0-9d9fc0175b28"
             },
-            "labels": [
-              " Report "
-            ],
             "vertices": [
               {
                 "x": 92,
@@ -1046,6 +1046,9 @@
               "threats": []
             },
             "id": "1b62270f-7bfc-4f5d-80b4-8704e3d5eb40",
+            "labels": [
+              "Telefonnummer, OTT"
+            ],
             "source": {
               "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
             },
@@ -1061,9 +1064,6 @@
                 "x": 590,
                 "y": 220
               }
-            ],
-            "labels": [
-              "Telefonnummer, OTT"
             ]
           },
           {
@@ -1172,6 +1172,9 @@
               ]
             },
             "id": "06cf09ec-2d52-4c60-b39d-db1aae73dc2f",
+            "labels": [
+              "OTT"
+            ],
             "source": {
               "cell": "50d11afb-a629-404e-a96a-1886bda11d65"
             },
@@ -1183,15 +1186,12 @@
                 "x": 320,
                 "y": 650
               }
-            ],
-            "labels": [
-              "OTT"
             ]
           },
           {
             "position": {
               "x": 410,
-              "y": -174
+              "y": -164
             },
             "size": {
               "width": 120,
@@ -1247,8 +1247,8 @@
                   "status": "Open",
                   "severity": "Low",
                   "type": "Repudiation",
-                  "description": "Ein interner Mitarbeiter admin editiert Telefonnummern in der DB (z. B. Zielnummer eines Users) und kann diese Handlung später abstreiten.\n\nAngriffsvektor: Die Änderung erfolgt über gemeinsame Admin-Konten oder ohne ausreichende Protokollierung der Benutzeridentität.\n\nCAPEC: CAPEC-122 – Privilege Abuse\nATT&CK: T1565.001 – Stored Data Manipulation\n\nD: 4 / R: 3 / E: 3 / A: 3/  DREA: 13",
-                  "mitigation": "Jede DB-Änderung ist eindeutig einer Person und einem Zeitpunkt zuzuordnen.\n\nUmsetzung: Persönliche Admin-Konten, DB-Auditing, SIEM-Alarmierung bei Änderungen.\n\nMASVS V3 – Secure Authentication & Authorization\n\nD: 4 / R: 6 / E: 4 / A: 6/  DREA: 24",
+                  "description": "Ein interner Mitarbeiter admin editiert Telefonnummern in der DB (z. B. Zielnummer eines Users) und kann diese Handlung später abstreiten.\n\nAngriffsvektor: Die Änderung erfolgt über gemeinsame Admin-Konten oder ohne ausreichende Protokollierung der Benutzeridentität.\n\nCAPEC: CAPEC-122 – Privilege Abuse\nATT&CK: T1565.001 – Stored Data Manipulation\n\nD: 6 / R: 5 / E: 3 / A: 7/  DREA: 21",
+                  "mitigation": "Jede DB-Änderung ist eindeutig einer Person und einem Zeitpunkt zuzuordnen.\n\nUmsetzung: Persönliche Admin-Konten, DB-Auditing, SIEM-Alarmierung bei Änderungen.\n\nMASVS V3 – Secure Authentication & Authorization\n\nD: 4/ R: 3 / E: 3 / A: 3/  DREA: 13",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
@@ -1322,8 +1322,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b",
             "zIndex": 14,
+            "id": "af73e27b-c4a3-4dd5-8545-e0dcde099b3b",
             "data": {
               "type": "tm.Process",
               "name": "SIEM-System",
@@ -1359,8 +1359,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "50d11afb-a629-404e-a96a-1886bda11d65",
             "zIndex": 15,
+            "id": "50d11afb-a629-404e-a96a-1886bda11d65",
             "data": {
               "type": "tm.Process",
               "name": "Allsecure\nMobile Phone \nOTT Service",
@@ -1413,8 +1413,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "c8925ab4-4b5e-4012-98fc-5ff23bdab848",
             "zIndex": 16,
+            "id": "c8925ab4-4b5e-4012-98fc-5ff23bdab848",
             "data": {
               "type": "tm.Store",
               "name": "SIEM Log-DB",
@@ -1451,8 +1451,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "343f9a5d-96ca-4248-95b0-9d9fc0175b28",
             "zIndex": 17,
+            "id": "343f9a5d-96ca-4248-95b0-9d9fc0175b28",
             "data": {
               "type": "tm.Actor",
               "name": "Manegment",
